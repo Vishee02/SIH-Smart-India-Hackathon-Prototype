@@ -1,0 +1,393 @@
+/* -----------------------------
+   Base and Reset Styles
+------------------------------ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root vars */
+:root {
+  /* Will be updated dynamically from JS to match sticky header height */
+  --sticky-offset: 0px;
+}
+
+/* Use smooth scrolling on the root scroll container and account for sticky header */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--sticky-offset);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f7f9fc;
+  color: #1a1a1a;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* -----------------------------
+   Header
+------------------------------ */
+header {
+  background: linear-gradient(90deg, #f98900, #15b407);
+  color: white;
+  padding: 1.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #ffd700;
+  color: #003366;
+}
+
+/* Active link state */
+nav a.active,
+nav a[aria-current="page"] {
+  background-color: #ffd700;
+  color: #003366;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  background: #ffd700;
+  color: #003366;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  z-index: 1100;
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+  display: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* -----------------------------
+   Main Content
+------------------------------ */
+main {
+  max-width: 960px;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+/* Section Style */
+section {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  /* Ensure scrolling to anchors doesn't hide content beneath sticky header */
+  scroll-margin-top: var(--sticky-offset);
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Headings */
+h2 {
+  font-size: 1.75rem;
+  color: #003366;
+  border-left: 6px solid #ffd700;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+ul li {
+  margin-bottom: 0.6rem;
+}
+
+/* Email Links */
+a.email-link {
+  color: #005b96;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a.email-link:hover {
+  text-decoration: underline;
+}
+
+/* -----------------------------
+   Buttons
+------------------------------ */
+button.cta-btn {
+  background-color: #005b96;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.6rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 91, 150, 0.3);
+}
+
+button.cta-btn:hover,
+button.cta-btn:focus {
+  background-color: #003366;
+  outline: none;
+}
+
+/* -----------------------------
+   Footer
+------------------------------ */
+footer {
+  background: #222;
+  color: #eee;
+  text-align: center;
+  padding: 1.2rem 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  margin-top: auto;
+}
+
+/* -----------------------------
+   Responsive
+------------------------------ */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  /* Mobile: show toggle and collapse nav by default */
+  .nav-toggle {
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+
+  nav#primaryNav {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: rgba(0,0,0,0.15);
+    padding: 0.6rem;
+    border-radius: 8px;
+    margin-top: 0.6rem;
+  }
+
+  nav#primaryNav.open {
+    display: flex;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* -----------------------------
+   Animations
+------------------------------ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section.visible {
+  animation: fadeInUp 0.8s ease-out;
+}
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 480px;
+  padding: 2rem;
+  z-index: 1050;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-content {
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #777;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #0071bc;
+  outline: none;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 1040;
+}
+
+/* Modal form */
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#contactForm label {
+  font-weight: 600;
+}
+
+#contactForm input,
+#contactForm textarea {
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  border-color: #0071bc;
+  outline: none;
+}
+
+/* Form status message */
+#formStatus {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  min-height: 1.2em;
+}
+
+
+
+/* Back to Top Button */
+#backToTop {
+  background-color: #0071bc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 113, 188, 0.6);
+  user-select: none;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+
+#backToTop:hover,
+#backToTop:focus {
+  background-color: #004aad;
+  outline: none;
+}
+
+/* Responsive modal */
+@media (max-width: 500px) {
+  .modal {
+    width: 95%;
+    padding: 1.5rem;
+  }
+}
+
+/* Additional Accessibility Improvements */
+button.cta-btn:focus,
+nav a:focus {
+  outline: 3px solid #ffb400;
+  outline-offset: 3px;
+}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI-Based Smart Allocation Engine for PM Internship Scheme</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <script src="sih.js"></script>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+
+  <header>
+    <h1>AI-Based Smart Allocation Engine for PM Internship Scheme</h1>
+    <button class="nav-toggle" id="navToggle" aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">☰ Menu</button>
+    <nav id="primaryNav" role="navigation" aria-label="Primary">
+      <a href="#intro">Introduction</a>
+      <a href="#problem">Problem Statement</a>
+      <a href="#solution1">Solution 1</a>
+      <a href="#solution2">Solution 2</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#mlmodels">ML Models</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#implementation">Implementation</a>
+      <a href="#future">Future Scope</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="intro">
+      <h2>Introduction</h2>
+      <p>The AI-Based Smart Allocation Engine for the PM Internship Scheme is designed to revolutionize how internships are assigned to deserving candidates using artificial intelligence and machine learning.</p>
+    </section>
+
+    <section id="problem">
+      <h2>Problem Statement</h2>
+      <p>Traditional internship allocation methods are often manual, inefficient, and subjective...</p>
+      <ul>
+        <li>Manual screening of applications causing delays.</li>
+        <li>Inability to match skills objectively.</li>
+        <li>Lack of personalized guidance.</li>
+      </ul>
+    </section>
+
+    <section id="solution1">
+      <h2>Solution 1: Skill-Based Matching Using Machine Learning</h2>
+      <p>This approach uses Natural Language Processing (NLP) to analyze resumes and profiles.</p>
+      <ul>
+        <li>Automates resume parsing.</li>
+        <li>Matches roles using similarity metrics.</li>
+        <li>Improves speed and accuracy.</li>
+      </ul>
+    </section>
+
+    <section id="solution2">
+      <h2>Solution 2: Personalized Skill Gap Identification</h2>
+      <p>Identifies missing skills and suggests learning paths.</p>
+      <ul>
+        <li>Analyzes skill gaps.</li>
+        <li>Recommends learning modules.</li>
+        <li>Boosts employability.</li>
+      </ul>
+    </section>
+
+    <section id="architecture">
+      <h2>System Architecture</h2>
+      <ul>
+        <li><strong>Data Collection:</strong> Resumes, records, and role data.</li>
+        <li><strong>Preprocessing:</strong> Clean and normalize inputs.</li>
+        <li><strong>ML Engine:</strong> NLP and recommendation logic.</li>
+        <li><strong>Recommendation Module:</strong> Learning suggestions.</li>
+        <li><strong>UI:</strong> Admin and intern portals.</li>
+      </ul>
+    </section>
+
+    <section id="mlmodels">
+      <h2>Machine Learning Models Used</h2>
+      <ul>
+        <li><strong>NLP:</strong> Resume parsing and role understanding.</li>
+        <li><strong>Recommendation Algorithms:</strong> Collaborative and content-based.</li>
+        <li><strong>Classification:</strong> Suitability scoring.</li>
+        <li><strong>Skill Gap Analysis:</strong> Profile vs requirements.</li>
+      </ul>
+    </section>
+
+    <section id="benefits">
+      <h2>Benefits</h2>
+      <ul>
+        <li>Faster internship allocations.</li>
+        <li>Personalized career guidance.</li>
+        <li>Reduced manual workload.</li>
+        <li>Higher intern satisfaction.</li>
+        <li>Data-driven improvements.</li>
+      </ul>
+    </section>
+
+    <section id="implementation">
+      <h2>Implementation Details</h2>
+      <ul>
+        <li>Python for ML using scikit-learn, TensorFlow, or PyTorch.</li>
+        <li>Flask/Django for backend.</li>
+        <li>React/Vue.js for frontend.</li>
+        <li>Cloud-based deployment and storage.</li>
+      </ul>
+    </section>
+
+    <section id="future">
+      <h2>Future Scope</h2>
+      <ul>
+        <li>Mentor feedback integration.</li>
+        <li>Gamified learning system.</li>
+        <li>AI-based career counseling.</li>
+        <li>Post-internship job recommendations.</li>
+        <li>Multi-language support.</li>
+      </ul>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+      <h2>What Our Users Say</h2>
+      <blockquote>
+        <p>"This AI engine transformed how I got my internship! The skill matching was spot on."</p>
+        <footer>— Jane Doe, Intern</footer>
+      </blockquote>
+      <blockquote>
+        <p>"Automating allocations saved us tons of time and increased our intern success rate."</p>
+        <footer>— John Smith, HR Manager</footer>
+      </blockquote>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <dl>
+        <dt>How does the AI match my skills to internships?</dt>
+        <dd>We use NLP to analyze your resume and compare your skills with internship requirements, ensuring the best fit.</dd>
+
+        <dt>Can I improve my chances if I lack certain skills?</dt>
+        <dd>Yes! Our system recommends personalized learning paths to help you bridge skill gaps.</dd>
+
+        <dt>Is my personal data secure?</dt>
+        <dd>Absolutely. We follow industry best practices to protect your data and privacy.</dd>
+      </dl>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>For inquiries or collaboration, please reach out at
+        <a href="mailto:contact@smartinternship.ai" class="email-link">contact@smartinternship.ai</a>.
+      </p>
+      <button class="cta-btn" id="contactBtn" aria-label="Contact us button">Send a Message</button>
+    </section>
+  </main>
+
+  <!-- Modal Contact Form -->
+  <div class="modal-backdrop" id="modalBackdrop" hidden></div>
+  <div class="modal" id="contactModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-content">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close contact form">&times;</button>
+      <h2 id="modalTitle">Contact Us</h2>
+      <form id="contactForm" novalidate>
+        <label for="nameInput">Name</label>
+        <input type="text" id="nameInput" name="name" required aria-required="true" placeholder="Your full name" />
+
+        <label for="emailInput">Email</label>
+        <input type="email" id="emailInput" name="email" required aria-required="true" placeholder="your.email@example.com" />
+
+        <label for="messageInput">Message</label>
+        <textarea id="messageInput" name="message" rows="5" required aria-required="true" placeholder="Write your message here..."></textarea>
+
+        <button type="submit" class="cta-btn">Send Message</button>
+
+        <div id="formStatus" role="alert" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" aria-label="Back to top" title="Back to top" style="display:none; position:fixed; bottom:2rem; right:2rem; padding:0.7rem 1.1rem; font-size:1rem; z-index: 9999;">
+    ↑ Top
+  </button>
+  <footer>
+    &copy; 2025 AI-Based Smart Allocation Engine for PM Internship Scheme
+  </footer>
+
+  <script>
+    // Show modal contact form when "Send a Message" button clicked
+    const contactBtn = document.getElementById('contactBtn');
+    const modal = document.getElementById('contactModal');
+    const modalBackdrop = document.getElementById('modalBackdrop');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+
+    function openModal() {
+      modal.hidden = false;
+      modalBackdrop.hidden = false;
+      modal.setAttribute('aria-hidden', 'false');
+      // Focus first input
+      document.getElementById('nameInput').focus();
+    }
+
+    function closeModal() {
+      modal.hidden = true;
+      modalBackdrop.hidden = true;
+      modal.setAttribute('aria-hidden', 'true');
+      formStatus.textContent = '';
+      contactForm.reset();
+      contactBtn.focus();
+    }
+
+    contactBtn.addEventListener('click', openModal);
+    modalCloseBtn.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', closeModal);
+
+    // Close modal on Escape key press
+    window.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && !modal.hidden) {
+        closeModal();
+      }
+    });
+
+    // Form submission with basic validation and success message
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+
+      if (!contactForm.checkValidity()) {
+        formStatus.textContent = 'Please fill out all required fields correctly.';
+        return;
+      }
+
+      formStatus.textContent = 'Sending message...';
+
+      // Simulate async submission
+      setTimeout(() => {
+        formStatus.textContent = 'Thank you for your message! We will get back to you shortly.';
+        contactForm.reset();
+      }, 1500);
+    });
+
+    // Back to top button logic
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'block';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Intersection Observer for fade-in effect on sections (optional)
+    const sections = document.querySelectorAll('main section');
+    const observerOptions = { threshold: 0.15 };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+
+</html>
